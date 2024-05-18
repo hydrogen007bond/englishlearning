@@ -1,6 +1,7 @@
 
 package zw.co.englishlearningsystem;
 
+import java.util.HashMap;
 import java.util.Map;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -13,23 +14,25 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Login {
-    
-     private Map<String, User> users;
-     private Alerts alert;
-     private Menu menu;
-     private SignUp signUpPage;
+
+    private final Map<String, User> users;
+    private final Alerts alert;
+    private final Menu menu;
+    private final SignUp signUpPage;
 
     public Login() {
+        this(new HashMap<>());
     }
-     
-    public Login(Map<String, User> users, Alerts alert, Menu menu, SignUp signUpPage) {
+
+    public Login(Map<String, User> users) {
         this.users = users;
-        this.alert = alert;
-        this.menu = menu;
-        this.signUpPage = signUpPage;
+        this.alert = new Alerts();
+        this.menu = new Menu();
+        this.signUpPage = new SignUp();
     }
-       
-     public VBox createLoginPage(Stage primaryStage) {
+
+
+    public VBox createLoginPage(Stage primaryStage) {
         VBox loginPage = new VBox(10);
         loginPage.setPadding(new Insets(20));
 

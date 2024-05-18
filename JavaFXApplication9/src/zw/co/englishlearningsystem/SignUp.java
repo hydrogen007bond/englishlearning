@@ -13,12 +13,12 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class SignUp {
-    
-    private Map<String, User> users;
-    private Alerts alert;
 
-    public SignUp(Alerts alert) {
-        this.alert = alert;
+    private Map<String, User> users;
+    private final Alerts alert;
+
+    public SignUp() {
+        this.alert = new Alerts();
     }
     
     
